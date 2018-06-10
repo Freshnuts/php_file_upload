@@ -29,7 +29,7 @@ Set permissions to upload folder for 'www-data' group.<br>
 (Debian/ubuntu has group "www-data" for apache NOT "apache".)<br>
 <br>
 chgrp www-data upload.php && chgrp www-data form.html<br>
-chmod 755 upload.php && chmod 755 form.html
+chmod 755 upload.php && chmod 755 form.html<br>
 chmod 766 /var/www/html/uploads<br>
 <br>
 
