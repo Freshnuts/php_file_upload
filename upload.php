@@ -8,6 +8,7 @@
 
 $path = "uploads/";
 $uploadfile = $path.basename($_FILES['file']['name']);
+$temp = $_FILES['file']['tmp_name'];
 
 
 // Debug Information
@@ -20,13 +21,13 @@ echo "Type: ".$_FILES['file']['type']."<br>";
 echo "Temp: ".$_FILES['file']['tmp_name']."<br>";
 
 
-$temp = $_FILES['file']['tmp_name'];
-//if (move_uploaded_file($tmp, $path)) {
-//   echo "The file has been uploaded";
-//} else {
-//   echo "There was an error uploading the file, please try again!";
-
-move_uploaded_file($temp, $uploadfile);
+// Check file upload status.
+if (move_uploaded_file($temp, $uploadfile)) {
+    echo "The file has been uploaded";
+} else {
+    echo "There was an error uploading the file, please try again!";
+}
+//move_uploaded_file($temp, $uploadfile);
 
 ?>
 
